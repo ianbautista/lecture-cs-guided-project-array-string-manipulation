@@ -20,6 +20,17 @@ Output: -1
 Explanation:
 There is no index that satisfies the conditions in the problem statement.
 """
+
+
 def pivot_index(nums):
     # Your code here
+    for i in range(len(nums) - 1):
+        left_sum = sum(nums[:i])
+        right_sum = sum(nums[i + 1:])
+        if left_sum == right_sum:
+            return i
+        else:
+            return -1
 
+
+print(pivot_index([1, 2, 3]))
