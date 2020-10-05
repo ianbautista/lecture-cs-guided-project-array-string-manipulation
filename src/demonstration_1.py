@@ -26,11 +26,12 @@ def pivot_index(nums):
     # Your code here
     for i in range(len(nums) - 1):
         left_sum = sum(nums[:i])
+        print("left", nums[:i])
         right_sum = sum(nums[i + 1:])
+        print("right", nums[i + 1:])
         if left_sum == right_sum:
             return i
-        else:
-            return -1
+    return -1
 
 
-print(pivot_index([1, 2, 3]))
+print(pivot_index([1, 7, 3, 6, 5, 6]))
